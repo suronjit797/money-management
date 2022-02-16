@@ -18,6 +18,21 @@ a,a:hover{
 img{
     max-width: 100%;
 }
+.primary_btn{
+    padding: 10px 40px;
+    background: var(--primary-color);
+    color: #fff;
+    transition: .5s;
+    box-shadow: -1px 20px 22px -9px #00000045;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+}
+.primary_btn:hover{
+    color: #fff;
+    box-shadow: 0 0 0 0 ;
+    transform: scale(1.1);
+}
 
 /* left_section */
 .left_section img{

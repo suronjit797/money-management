@@ -31,25 +31,49 @@
         <!-- heading -->
         <h1 class="text-center fw-bold primary_text my-5"> Money Management App </h1>
 
-        <div class="row gx-5 align-items-stretch">
+        <div class="row gx-0 gx-md-5 align-items-stretch">
             <!-- left side -->
             <div class="col-lg-6 col-md-6 col-12 left_section">
-                <img src="images/calculate.jpg" alt="calculate images">
+                <img src="images/calculate.jpg" class="h-100" alt="calculate images">
             </div>
 
             <!-- right side -->
-            <div class="col-lg-6 col-md-6 col-12 right_section d-flex align-items-center flex-column justify-content-center">
+            <div
+                class="col-lg-6 col-md-6 col-12 right_section d-flex align-items-center flex-column justify-content-center">
                 <div class="text-center py-5 w-100">
-                    <h4 class="my-4" >Income</h4>
-                    <p class="d-flex align-items-center justify-content-center"> <label for="income" class="me-3">Income: </label> <input type="text" name="income" id="income">
+                    <!-- income section -->
+                    <h4 class="my-4">Income</h4>
+                    <p class="d-flex align-items-center justify-content-center">
+                        <label for="income" class="me-3">Income: </label>
+                        <input type="text" name="income" id="income">
                     </p>
-                    <h4 class="my-4" >Expense</h4>
-                    <p class="d-flex align-items-center justify-content-center"> <label for="food" class="me-3">Food: </label> <input type="text" name="food" id="food">
+                    <!-- expense section  -->
+                    <h4 class="my-4">Expense</h4>
+                    <p class="d-flex align-items-center justify-content-center">
+                        <label for="food" class="me-3">Food: </label>
+                        <input type="text" name="food" id="food">
                     </p>
-                    <p class="d-flex align-items-center justify-content-center"> <label for="rent" class="me-3">Rent: </label> <input type="text" name="rent" id="rent">
+                    <p class="d-flex align-items-center justify-content-center">
+                        <label for="rent" class="me-3">Rent: </label> <input type="text" name="rent" id="rent">
                     </p>
-                    <p class="d-flex align-items-center justify-content-center"> <label for="clothes" class="me-3">Clothes: </label> <input type="text" name="clothes" id="clothes">
+                    <p class="d-flex align-items-center justify-content-center">
+                        <label for="clothes" class="me-3">Clothes: </label>
+                        <input type="text" name="clothes" id="clothes">
                     </p>
+
+                    <button class=" primary_btn"> Calculate </button>
+                    <h4 class="my-4">Total Expenses: <span id="totalExpense">5500</span> </h4>
+                    <h4 class="my-4">Balance: <span class="balanceAmount">4500</span> </h4>
+                    <p class="d-flex align-items-center justify-content-center">
+                        <label for="clothes" class="me-3">Save: </label>
+                        <input type="text" name="saveMoney" id="saveMoney" class="w-50">
+                        <span class="d-inline-block mx-3">%</span>
+                        <button class=" primary_btn"> Save </button>
+                    </p>
+
+                    <h4 class="my-4 ">Saving Amount: <span id="savingAmount">2000 </span> </h4>
+                    <h4 class="my-4 ">Remaining Balance:  <span id="remainingBalance">2500</span> </h4>
+
 
                 </div>
             </div>
@@ -60,7 +84,7 @@
 
 
     <!-- main js -->
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 
 
     <!-- bootstrap js -->
