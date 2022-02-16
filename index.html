@@ -45,31 +45,31 @@
                     <h4 class="my-4">Income</h4>
                     <p class="d-flex align-items-center justify-content-center">
                         <label for="income" class="me-3">Income: </label>
-                        <input type="text" name="income" id="income">
+                        <input type="number" value="0" name="income" id="income">
                     </p>
                     <!-- expense section  -->
                     <h4 class="my-4">Expense</h4>
                     <p class="d-flex align-items-center justify-content-center">
                         <label for="food" class="me-3">Food: </label>
-                        <input type="text" name="food" id="food">
+                        <input type="number" value="0" name="food" id="food">
                     </p>
                     <p class="d-flex align-items-center justify-content-center">
                         <label for="rent" class="me-3">Rent: </label>
-                        <input type="text" name="rent" id="rent">
+                        <input type="number" value="0" name="rent" id="rent">
                     </p>
                     <p class="d-flex align-items-center justify-content-center">
                         <label for="clothes" class="me-3">Clothes: </label>
-                        <input type="text" name="clothes" id="clothes">
+                        <input type="number" value="0" name="clothes" id="clothes">
                     </p>
 
                     <button class=" primary_btn" id="calculate"> Calculate </button>
-                    <h4 class="my-4">Total Expenses: <span id="totalExpense">5500</span> </h4>
-                    <h4 class="my-4">Balance: <span class="balanceAmount">4500</span> </h4>
+                    <h4 class="my-4">Total Expenses: <span id="totalExpense">0</span> </h4>
+                    <h4 class="my-4">Balance: <span id="balanceAmount">0</span> </h4>
                     <p class="d-flex align-items-center justify-content-center">
                         <label for="clothes" class="me-3">Save: </label>
-                        <input type="text" name="saveMoney" id="saveMoney" class="w-50">
+                        <input type="number" name="percentage" id="percentage" class="w-50">
                         <span class="d-inline-block mx-3">%</span>
-                        <button class=" primary_btn"> Save </button>
+                        <button class=" primary_btn" id="save_btn"> Save </button>
                     </p>
 
                     <h4 class="my-4 ">Saving Amount: <span id="savingAmount">2000 </span> </h4>
@@ -86,7 +86,7 @@
 
     <div class="errorMessage" id="modal_close">
         <div class="my_modal p-5 bg-danger" id="myModal">
-            <h3 class="text-white" id="modal_message">hello world</h3>
+            <h3 class="text-white" id="modal_message"></h3>
         </div>
     </div>
 
