@@ -1,0 +1,47 @@
+:root{
+    --primary-color: #38CC77;
+}
+
+/* global */
+body{
+    font-family: 'Poppins', sans-serif;
+}
+a,a:hover{
+    text-decoration: none;
+}
+.primary_text{
+    color: var(--primary-color);
+}
+.primary_bg{
+    background-color: var(--primary-color);
+}
+img{
+    max-width: 100%;
+}
+
+/* left_section */
+.left_section img{
+    width: 100%;
+}
+
+
+/* left_section */
+.right_section{
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.right_section label{
+    width: 20%;
+    text-align: right;
+}
+
+.right_section input{
+    width: 50%;
+}
+
+.right_section input{
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.116);
+    padding: 10px 20px;
+}
