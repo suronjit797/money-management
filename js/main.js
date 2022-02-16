@@ -41,8 +41,6 @@ function inputOutputBalance() {
 
 // calculate button click
 selectorId('calculate').addEventListener('click', inputOutputBalance)
-
-
 selectorId('save_btn').addEventListener('click', function () {
     let percentageTextValue = selectorId('percentage')
     let percentage = parseFloat(percentageTextValue.value)
