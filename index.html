@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 4</title>
+    <title>Money Management Application </title>
 
 
     <!-- fonts  -->
@@ -34,7 +34,7 @@
         <div class="row gx-0 gx-md-5 align-items-stretch">
             <!-- left side -->
             <div class="col-lg-6 col-md-6 col-12 left_section">
-                <img src="images/calculate.jpg" class="h-100" alt="calculate images">
+                <img src="images/calculate.jpg" class="h-100 w-100" alt="calculate images">
             </div>
 
             <!-- right side -->
@@ -45,21 +45,21 @@
                     <h4 class="my-4">Income</h4>
                     <p class="d-flex align-items-center justify-content-center">
                         <label for="income" class="me-3">Income: </label>
-                        <input type="number" value="0" name="income" id="income">
+                        <input type="number" name="income" id="income">
                     </p>
                     <!-- expense section  -->
                     <h4 class="my-4">Expense</h4>
                     <p class="d-flex align-items-center justify-content-center">
                         <label for="food" class="me-3">Food: </label>
-                        <input type="number" value="0" name="food" id="food">
+                        <input type="number" name="food" id="food">
                     </p>
                     <p class="d-flex align-items-center justify-content-center">
                         <label for="rent" class="me-3">Rent: </label>
-                        <input type="number" value="0" name="rent" id="rent">
+                        <input type="number" name="rent" id="rent">
                     </p>
                     <p class="d-flex align-items-center justify-content-center">
                         <label for="clothes" class="me-3">Clothes: </label>
-                        <input type="number" value="0" name="clothes" id="clothes">
+                        <input type="number" name="clothes" id="clothes">
                     </p>
 
                     <button class=" primary_btn" id="calculate"> Calculate </button>
@@ -72,8 +72,8 @@
                         <button class=" primary_btn" id="save_btn"> Save </button>
                     </p>
 
-                    <h4 class="my-4 ">Saving Amount: <span id="savingAmount">2000 </span> </h4>
-                    <h4 class="my-4 ">Remaining Balance: <span id="remainingBalance">2500</span> </h4>
+                    <h4 class="my-4 ">Saving Amount: <span id="savingAmount">0 </span> </h4>
+                    <h4 class="my-4 ">Remaining Balance: <span id="remainingBalance">0</span> </h4>
 
 
                 </div>
@@ -85,8 +85,8 @@
 
 
     <div class="errorMessage" id="modal_close">
-        <div class="my_modal p-5 bg-danger" id="myModal">
-            <h3 class="text-white" id="modal_message"></h3>
+        <div class="my_modal p-5" id="myModal">
+            <h3 id="modal_message"></h3>
         </div>
     </div>
 

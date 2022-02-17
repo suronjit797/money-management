@@ -1,4 +1,9 @@
-// my personal function for id selector
+
+// global variable 
+let totalBalance = 0
+
+
+// function for reuse
 function selectorId(id) {
     return document.getElementById(id)
 }
@@ -8,9 +13,15 @@ function inputValue(id) {
     return parseFloat(incomeTextValue.value)
 }
 
+// function for error message
+function errorMessage(message) {
+    selectorId('modal_message').innerText = message
+    selectorId('modal_close').classList.add('active')
+    document.body.style.overflowY = 'hidden'
+}
 
-// income expanse function 
-function inputOutputBalance() {
+// calculate button click
+selectorId('calculate').addEventListener('click', function() {
     // income
     let income = inputValue('income')
 
@@ -20,46 +31,41 @@ function inputOutputBalance() {
     let clothes = inputValue('clothes')
     let totalExpanse = food + rent + clothes
     let balance = 0
+
     // error handling of income and expanse
     if (isNaN(income) || isNaN(food) || isNaN(rent) || isNaN(clothes)) {
-        selectorId('modal_message').innerText = 'Please fill all input boxes with number'
-        selectorId('modal_close').style.display = 'block'
-    } else if (income < 0 || food < 0 || rent < 0 || clothes < 0) {
-        selectorId('modal_message').innerText = 'Please fill all number positive'
-        selectorId('modal_close').style.display = 'block'
+        errorMessage('Please fill all input boxes with number')
     }
+    // error no negative number
+    else if (income < 0 || food < 0 || rent < 0 || clothes < 0) {
+        errorMessage('Please fill all positive number only')
+    }
+    // error no more money
     else if (income < totalExpanse) {
-        selectorId('modal_message').innerText = 'Your expanse is mode than your income'
-        selectorId('modal_close').style.display = 'block'
-    } else {
+        errorMessage('Your expanses is more than your income')
+    }
+    
+    else {
         selectorId('totalExpense').innerText = totalExpanse
         balance = income - totalExpanse
         selectorId('balanceAmount').innerText = balance
     }
-    return balance
-}
+    totalBalance =  balance
+})
 
-// calculate button click
-selectorId('calculate').addEventListener('click', inputOutputBalance)
+//saving section 
 selectorId('save_btn').addEventListener('click', function () {
     let percentageTextValue = selectorId('percentage')
     let percentage = parseFloat(percentageTextValue.value)
-    let previousBalance = inputOutputBalance()
-
+    let previousBalance = totalBalance
     let savingAmount = 0
-
-
     if (previousBalance <= 0) {
-        selectorId('modal_message').innerText = 'You have not any balance'
-        selectorId('modal_close').style.display = 'block'
-    } else if(!percentage || isNaN(percentage)){
-        selectorId('modal_message').innerText = 'Please provide a valid percentage value'
-        selectorId('modal_close').style.display = 'block'
+        errorMessage('You have not any balance')
+    } else if (!percentage || isNaN(percentage)) {
+        errorMessage('Please provide a valid percentage value')
     } else if (percentage > 100) {
-        selectorId('modal_message').innerText = 'You cannot save more than you have'
-        selectorId('modal_close').style.display = 'block'
+        errorMessage('You cannot save more than you have')
     }
-    
     else {
         savingAmount = (previousBalance * percentage) / 100
         selectorId('savingAmount').innerText = savingAmount
@@ -71,7 +77,8 @@ selectorId('save_btn').addEventListener('click', function () {
 
 // modal
 selectorId('modal_close').addEventListener('click', function () {
-    selectorId('modal_close').style.display = 'none'
+    selectorId('modal_close').classList.remove('active')
+    document.body.style.overflowY = 'scroll'
 })
 
 
