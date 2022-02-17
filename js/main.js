@@ -8,9 +8,24 @@ function selectorId(id) {
     return document.getElementById(id)
 }
 
-function inputValue(id) {
-    let incomeTextValue = selectorId(id)
-    return parseFloat(incomeTextValue.value)
+// text to number value
+function inputValue() {
+    for (const id of arguments) {
+        let incomeTextValue = selectorId(id)
+        return parseFloat(incomeTextValue.value)
+    }
+
+}
+
+// clear input field
+function clearInputValue() {
+    let clearValue
+    for (const id of arguments) {
+        let incomeTextValue = selectorId(id)
+        clearValue = incomeTextValue.value = ''
+    }
+    return clearValue
+
 }
 
 // function for error message
@@ -21,7 +36,7 @@ function errorMessage(message) {
 }
 
 // calculate button click
-selectorId('calculate').addEventListener('click', function() {
+selectorId('calculate').addEventListener('click', function () {
     // income
     let income = inputValue('income')
 
@@ -44,13 +59,14 @@ selectorId('calculate').addEventListener('click', function() {
     else if (income < totalExpanse) {
         errorMessage('Your expanses is more than your income')
     }
-    
+
     else {
         selectorId('totalExpense').innerText = totalExpanse
         balance = income - totalExpanse
         selectorId('balanceAmount').innerText = balance
     }
-    totalBalance =  balance
+    totalBalance = balance
+    clearInputValue('income', 'food', 'rent', 'clothes')
 })
 
 //saving section 
@@ -71,6 +87,7 @@ selectorId('save_btn').addEventListener('click', function () {
         selectorId('savingAmount').innerText = savingAmount
         selectorId('remainingBalance').innerText = previousBalance - savingAmount
     }
+    clearInputValue('percentage')
 })
 
 
