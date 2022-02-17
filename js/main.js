@@ -80,6 +80,8 @@ selectorId('save_btn').addEventListener('click', function () {
         errorMessage('Please provide a valid percentage value')
     } else if (percentage > 100) {
         errorMessage('You cannot save more than you have')
+    } else if (percentage < 0) {
+        errorMessage('percentage must be positive')
     }
     else {
         savingAmount = ((income * percentage) / 100).toFixed(2)
