@@ -1,6 +1,7 @@
 
 // global variable 
 let totalBalance = 0
+let income = 0
 
 
 // function for reuse
@@ -37,7 +38,7 @@ function errorMessage(message) {
 // calculate button click
 selectorId('calculate').addEventListener('click', function () {
     // income
-    let income = inputValue('income')
+    income = inputValue('income')
     // expenses
     let food = inputValue('food')
     let rent = inputValue('rent')
@@ -81,9 +82,14 @@ selectorId('save_btn').addEventListener('click', function () {
         errorMessage('You cannot save more than you have')
     }
     else {
-        savingAmount = ((previousBalance * percentage) / 100).toFixed(2)
-        selectorId('savingAmount').innerText = savingAmount
-        selectorId('remainingBalance').innerText = ((previousBalance - savingAmount).toFixed(2))
+        savingAmount = ((income * percentage) / 100).toFixed(2)
+        if (savingAmount > previousBalance) {
+            errorMessage('you have not enough money')
+            console.log(savingAmount)
+        } else {
+            selectorId('savingAmount').innerText = savingAmount
+            selectorId('remainingBalance').innerText = ((previousBalance - savingAmount).toFixed(2))
+        }
     }
     clearInputValue('percentage')
 })
