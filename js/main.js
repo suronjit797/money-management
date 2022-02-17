@@ -25,7 +25,6 @@ function clearInputValue() {
         clearValue = incomeTextValue.value = ''
     }
     return clearValue
-
 }
 
 // function for error message
@@ -39,7 +38,6 @@ function errorMessage(message) {
 selectorId('calculate').addEventListener('click', function () {
     // income
     let income = inputValue('income')
-
     // expenses
     let food = inputValue('food')
     let rent = inputValue('rent')
@@ -83,13 +81,12 @@ selectorId('save_btn').addEventListener('click', function () {
         errorMessage('You cannot save more than you have')
     }
     else {
-        savingAmount = (previousBalance * percentage) / 100
+        savingAmount = ((previousBalance * percentage) / 100).toFixed(2)
         selectorId('savingAmount').innerText = savingAmount
-        selectorId('remainingBalance').innerText = previousBalance - savingAmount
+        selectorId('remainingBalance').innerText = ((previousBalance - savingAmount).toFixed(2))
     }
     clearInputValue('percentage')
 })
-
 
 
 // modal
